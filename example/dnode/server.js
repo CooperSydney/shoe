@@ -1,4 +1,4 @@
-var shoe = require('../');
+var shoe = require('../../');
 var dnode = require('dnode');
 
 var http = require('http');

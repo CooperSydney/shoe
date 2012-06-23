@@ -1,7 +1,6 @@
 var http = require('http');
 var ecstatic = require('ecstatic')(__dirname + '/static');
 var shoe = require('../../');
-var es = require('event-stream');
 
 var server = http.createServer(ecstatic);
 server.listen(9999);

@@ -1,5 +1,5 @@
 {
-    "name" : "shoe-stream-example",
+    "name" : "shoe-invert-example",
     "version" : "0.0.0",
     "dependencies" : {
         "browserify" : "~1.13.0",
