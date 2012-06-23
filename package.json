@@ -3,6 +3,7 @@
     "version" : "0.0.0",
     "description" : "streaming sockjs for node and the browser",
     "main" : "index.js",
+    "browserify" : "browser.js",
     "directories" : {
         "example" : "example"
     },
