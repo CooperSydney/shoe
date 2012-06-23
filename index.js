@@ -17,6 +17,14 @@ exports = module.exports = function (opts, cb) {
         if (typeof hopts === 'string') {
             hopts = { prefix : hopts };
         }
+        if (!hopts) hopts = {};
+        if (hopts.log === undefined) {
+            // spamming stdout by default is VERY infuriating,
+            // emit an event instead
+            hopts.log = function (severity, line) {
+                server.emit('log', severity, line);
+            };
+        }
         server.installHandlers(httpServer, hopts);
     };
     
