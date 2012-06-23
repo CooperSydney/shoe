@@ -14,6 +14,8 @@ take on [sockjs](https://github.com/sockjs/sockjs-node).
 * emits a `'log'` event instead of spamming stdout
 ([silence](http://www.faqs.org/docs/artu/ch01s06.html#id2878450))
 
+![shoe point javascript](http://substack.net/images/shoe.png)
+
 example
 =======
 
