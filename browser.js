@@ -28,6 +28,10 @@ module.exports = function (uri, cb) {
     };
     stream.end = function (msg) {
         if (msg !== undefined) stream.write(msg);
+        if (!ready) {
+            stream._ended = true;
+            return;
+        }
         stream.writable = false;
         sock.close();
     };
@@ -39,6 +43,7 @@ module.exports = function (uri, cb) {
             sock.send(msg);
         });
         buffer = [];
+        if (stream._ended) stream.end();
     };
     sock.onmessage = function (e) {
         stream.emit('data', e.data);
