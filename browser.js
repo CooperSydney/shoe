@@ -26,6 +26,11 @@ module.exports = function (uri, cb) {
         if (!ready) buffer.push(msg)
         else sock.send(msg)
     };
+    stream.end = function (msg) {
+        if (msg !== undefined) stream.write(msg);
+        stream.writable = false;
+        sock.close();
+    };
     
     sock.onopen = function () {
         if (typeof cb === 'function') cb();
